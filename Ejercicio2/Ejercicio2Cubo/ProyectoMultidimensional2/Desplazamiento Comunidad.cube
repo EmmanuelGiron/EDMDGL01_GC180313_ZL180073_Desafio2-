@@ -1,0 +1,324 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="944ae1e8-9ce6-4ccf-895e-a3773634bf27" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Desplazamiento Comunidad</ID>
+  <Name>Desplazamiento Comunidad</Name>
+  <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T06:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="16" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-10435" scrolltop="-5919" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="50" x="15796" y="11245" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="tiempo" left="10146" top="7505" logicalid="8" controlid="1" masterid="0" hint1="0" hint2="0" width="3016" height="2725" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000c80b0000a50a0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_tiempo" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="pais" left="-2882" top="5677" logicalid="9" controlid="2" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000057070000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_pais" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="datos_desplazamiento" left="7129" top="-582" logicalid="10" controlid="3" masterid="0" hint1="0" hint2="0" width="7990" height="4419" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000361f000043110000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_datos_desplazamiento" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="departamentos" left="-2308" top="1029" logicalid="11" controlid="4" masterid="0" hint1="0" hint2="0" width="5769" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e000089160000fe080000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_departamentos" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="10155" top="3537" logicalid="12" controlid="5" masterid="0" hint1="0" hint2="0" width="799" height="4468" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[fk_tiempo]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="3" sourceattachpoint="0" destattachpoint="13" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="10554" y="7505" />
+              <point x="10554" y="5381" />
+              <point x="10574" y="5381" />
+              <point x="10574" y="3837" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="-1924" top="3031" logicalid="13" controlid="6" masterid="0" hint1="0" hint2="0" width="942" height="3146" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[fk_departamento_pais]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="4" sourceattachpoint="4" destattachpoint="3" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="-1382" y="5677" />
+              <point x="-1382" y="5277" />
+              <point x="-1624" y="5277" />
+              <point x="-1624" y="3331" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="3161" top="1231" logicalid="14" controlid="7" masterid="0" hint1="0" hint2="0" width="4268" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[fk_departamento]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="3" sourceattachpoint="23" destattachpoint="36" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="3461" y="1630" />
+              <point x="5189" y="1630" />
+              <point x="5189" y="1627" />
+              <point x="7129" y="1627" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-10435</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-5919</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-2882</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-582</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>50</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T06:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="382ae816-644b-46af-9c3e-87e5cff62de2">
+      <ID>Tiempo</ID>
+      <Name>Tiempo</Name>
+      <DimensionID>Tiempo</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="5e3e07e4-3642-47ca-82a6-98059e272c5c">
+          <AttributeID>Codigo Tiempo</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c27a8c95-2ba5-44e3-91ba-ec1fd9e967c6">
+          <AttributeID>Fecha</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="21c446c5-f126-4750-9934-49cdf48e2bba">
+          <AttributeID>Dia</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e8fc1650-4176-4880-aad4-14922862864e">
+          <AttributeID>Mes</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="ff105273-1b40-4b26-9eea-f6b96c662f40">
+      <ID>Departamentos</ID>
+      <Name>Departamentos</Name>
+      <DimensionID>Departamentos</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="89111962-f470-4a7b-8f3a-18ee6da3e713">
+          <AttributeID>Codigo Departamento</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7e56d929-f1ea-4448-b715-e62c20c5f52a">
+          <AttributeID>Codigo Pais</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f49f54a7-5f87-408b-81eb-f13b5ff11436">
+          <AttributeID>Nombre Departamento</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="f028fdbe-ee71-43c6-a106-0e3379164d79">
+      <ID>Datos Desplazamiento</ID>
+      <Name>Datos Desplazamiento</Name>
+      <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T06:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T06:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="380909c9-d442-41c2-8b05-a46cb05cde94">
+          <ID>Mov Parque</ID>
+          <Name>Mov Parque</Name>
+          <Source dwd:design-time-name="355622e6-4ff5-4a3f-97aa-7135fcf6b779">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c7aaecb1-4012-461b-8bec-8f3c1b5e8821">
+              <TableID>dbo_datos_desplazamiento</TableID>
+              <ColumnID>MovParque</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="be72b39c-f258-4b04-9740-f3bb02fefb59">
+          <ID>Mov TSF</ID>
+          <Name>Mov TSF</Name>
+          <Source dwd:design-time-name="9162e630-665a-43ae-a1ba-1e945c37b88f">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="33e989e0-4754-4fd2-a56c-eff6437bddd2">
+              <TableID>dbo_datos_desplazamiento</TableID>
+              <ColumnID>MovTSF</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="8e316c6c-78a9-46fb-a08a-b5208ca6e1b9">
+          <ID>Mov CR</ID>
+          <Name>Mov CR</Name>
+          <Source dwd:design-time-name="8f47a2cb-4c94-4aa5-8f20-e628efe4a183">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="addcd652-c6df-4b70-9538-5355c6cd96c6">
+              <TableID>dbo_datos_desplazamiento</TableID>
+              <ColumnID>MovCR</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="5fac7f52-0506-422f-b49a-4a4f128e27da">
+          <ID>Mov Transito</ID>
+          <Name>Mov Transito</Name>
+          <Source dwd:design-time-name="3f091c73-c825-476e-80f6-e489f9ae7170">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="cf4941f5-9bb2-492f-a448-34a09474d429">
+              <TableID>dbo_datos_desplazamiento</TableID>
+              <ColumnID>MovTransito</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="4a7324f5-7cb3-4f5b-b0d3-5817ea0aa4c6">
+          <ID>Mov Trabajo</ID>
+          <Name>Mov Trabajo</Name>
+          <Source dwd:design-time-name="0898c4f6-8177-4a8b-a711-111e3e22b428">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="92cae693-1cd2-4e88-9e00-01f151228394">
+              <TableID>dbo_datos_desplazamiento</TableID>
+              <ColumnID>MovTrabajo</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="248b6788-99f0-467b-ae80-fc46201a1ae3">
+          <ID>Mov Residencia</ID>
+          <Name>Mov Residencia</Name>
+          <Source dwd:design-time-name="a0345565-0da4-4f4a-af3e-b4fcb6f8fdae">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="45ea67f0-3f3f-496c-9dc7-a1ec12db295e">
+              <TableID>dbo_datos_desplazamiento</TableID>
+              <ColumnID>MovResidencia</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="eea679f1-2c4f-47f9-b01a-238855fc3620">
+          <CubeDimensionID>Tiempo</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="1a7dea7d-56cd-48d5-87a4-53fb439ff534">
+              <AttributeID>Codigo Tiempo</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="70bc9218-2471-4be9-ba00-dba225fe1021">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="0cea9dfb-a7a5-4b63-abc1-557ab44217db">
+                    <TableID>dbo_datos_desplazamiento</TableID>
+                    <ColumnID>CodigoTiempo</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="71ae1ffb-422e-4147-8955-abc4e91078c2">
+          <CubeDimensionID>Departamentos</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="6ae21a90-e3f8-4266-b0d8-6635e3fb716d">
+              <AttributeID>Codigo Departamento</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="b5f7c283-3219-44bd-a020-d6797b64a80d">
+                  <DataType>WChar</DataType>
+                  <DataSize>5</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="b3ea5383-efd6-4efe-b226-be164eac2af4">
+                    <TableID>dbo_datos_desplazamiento</TableID>
+                    <ColumnID>CodigoDepartamento</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="e6a8d4d3-8518-4ee3-8628-4b3cccd0f40a">
+    <DataSourceViewID>Desplazamiento Comunidad</DataSourceViewID>
+  </Source>
+</Cube>

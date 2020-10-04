@@ -1,0 +1,177 @@
+﻿<Infos>
+  <Item name="Tiempo.dim">
+    <Time>637373437869437619</Time>
+    <Hash length="20">
+      <b>82</b>
+      <b>7</b>
+      <b>32</b>
+      <b>77</b>
+      <b>8</b>
+      <b>136</b>
+      <b>14</b>
+      <b>91</b>
+      <b>92</b>
+      <b>65</b>
+      <b>107</b>
+      <b>25</b>
+      <b>177</b>
+      <b>222</b>
+      <b>244</b>
+      <b>0</b>
+      <b>65</b>
+      <b>152</b>
+      <b>136</b>
+      <b>96</b>
+    </Hash>
+  </Item>
+  <Item name="Desplazamiento Comunidad.partitions">
+    <Time>637373437218861132</Time>
+    <Hash length="20">
+      <b>154</b>
+      <b>47</b>
+      <b>137</b>
+      <b>200</b>
+      <b>94</b>
+      <b>185</b>
+      <b>117</b>
+      <b>78</b>
+      <b>201</b>
+      <b>192</b>
+      <b>57</b>
+      <b>105</b>
+      <b>231</b>
+      <b>76</b>
+      <b>123</b>
+      <b>180</b>
+      <b>112</b>
+      <b>175</b>
+      <b>63</b>
+      <b>173</b>
+    </Hash>
+  </Item>
+  <Item name="ProyectoMultidimensional2.database">
+    <Time>637373436471282736</Time>
+    <Hash length="20">
+      <b>148</b>
+      <b>84</b>
+      <b>73</b>
+      <b>60</b>
+      <b>90</b>
+      <b>8</b>
+      <b>157</b>
+      <b>133</b>
+      <b>105</b>
+      <b>63</b>
+      <b>50</b>
+      <b>253</b>
+      <b>83</b>
+      <b>201</b>
+      <b>37</b>
+      <b>224</b>
+      <b>215</b>
+      <b>160</b>
+      <b>158</b>
+      <b>248</b>
+    </Hash>
+  </Item>
+  <Item name="Departamentos.dim">
+    <Time>637373437869024753</Time>
+    <Hash length="20">
+      <b>214</b>
+      <b>153</b>
+      <b>148</b>
+      <b>189</b>
+      <b>235</b>
+      <b>163</b>
+      <b>96</b>
+      <b>1</b>
+      <b>225</b>
+      <b>96</b>
+      <b>19</b>
+      <b>234</b>
+      <b>8</b>
+      <b>212</b>
+      <b>3</b>
+      <b>163</b>
+      <b>202</b>
+      <b>217</b>
+      <b>177</b>
+      <b>184</b>
+    </Hash>
+  </Item>
+  <Item name="Desplazamiento Comunidad.dsv">
+    <Time>637373437067722931</Time>
+    <Hash length="20">
+      <b>26</b>
+      <b>163</b>
+      <b>247</b>
+      <b>185</b>
+      <b>252</b>
+      <b>206</b>
+      <b>34</b>
+      <b>135</b>
+      <b>96</b>
+      <b>75</b>
+      <b>138</b>
+      <b>100</b>
+      <b>134</b>
+      <b>137</b>
+      <b>170</b>
+      <b>35</b>
+      <b>97</b>
+      <b>243</b>
+      <b>232</b>
+      <b>20</b>
+    </Hash>
+  </Item>
+  <Item name="Desplazamiento Comunidad.cube">
+    <Time>637373437869348045</Time>
+    <Hash length="20">
+      <b>54</b>
+      <b>246</b>
+      <b>76</b>
+      <b>26</b>
+      <b>215</b>
+      <b>27</b>
+      <b>105</b>
+      <b>209</b>
+      <b>18</b>
+      <b>2</b>
+      <b>4</b>
+      <b>5</b>
+      <b>4</b>
+      <b>190</b>
+      <b>253</b>
+      <b>28</b>
+      <b>159</b>
+      <b>85</b>
+      <b>55</b>
+      <b>111</b>
+    </Hash>
+  </Item>
+  <Item name="Desplazamiento Comunidad.ds">
+    <Time>637373436878542479</Time>
+    <Hash length="20">
+      <b>64</b>
+      <b>216</b>
+      <b>207</b>
+      <b>159</b>
+      <b>41</b>
+      <b>1</b>
+      <b>189</b>
+      <b>82</b>
+      <b>237</b>
+      <b>255</b>
+      <b>235</b>
+      <b>237</b>
+      <b>152</b>
+      <b>44</b>
+      <b>39</b>
+      <b>245</b>
+      <b>120</b>
+      <b>104</b>
+      <b>200</b>
+      <b>35</b>
+    </Hash>
+  </Item>
+</Infos>

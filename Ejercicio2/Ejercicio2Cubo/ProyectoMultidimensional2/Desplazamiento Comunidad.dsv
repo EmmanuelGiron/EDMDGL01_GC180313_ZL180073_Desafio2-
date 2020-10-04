@@ -1,0 +1,155 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="d48abca7-79ce-4960-8bb9-4e2bd4800b8a" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Desplazamiento Comunidad</ID>
+  <Name>Desplazamiento Comunidad</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Desplazamiento Comunidad</DataSourceID>
+  <Schema>
+    <xs:schema id="Desplazamiento_x0020_Comunidad" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Desplazamiento_x0020_Comunidad" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="788d07a0-bf32-4b68-9406-d63bb3219bac">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_datos_desplazamiento" msprop:design-time-name="35a68d17-d038-4ac0-bdeb-1bcc86a1f574" msprop:DbTableName="datos_desplazamiento" msprop:FriendlyName="datos_desplazamiento" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="CodigoDepartamento" msprop:design-time-name="b0c5eec2-ba01-46f9-be9e-6449a9efa521" msprop:DbColumnName="CodigoDepartamento" msprop:FriendlyName="CodigoDepartamento">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="5" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CodigoTiempo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="09af4643-ab9a-4d4b-bc86-f982d66bc090" msprop:DbColumnName="CodigoTiempo" msprop:FriendlyName="CodigoTiempo" type="xs:int" />
+                  <xs:element name="MovParque" msprop:design-time-name="b04338b7-3038-4a9e-92af-297f8218bfc9" msprop:DbColumnName="MovParque" msprop:FriendlyName="MovParque" type="xs:double" />
+                  <xs:element name="MovTSF" msprop:design-time-name="f26a806d-070c-4bb4-ae06-40ec2fdf3c81" msprop:DbColumnName="MovTSF" msprop:FriendlyName="MovTSF" type="xs:double" />
+                  <xs:element name="MovCR" msprop:design-time-name="2022b9f3-d734-404c-97e9-38e03d1f5738" msprop:DbColumnName="MovCR" msprop:FriendlyName="MovCR" type="xs:double" />
+                  <xs:element name="MovTransito" msprop:design-time-name="ca61bace-3e30-4927-9337-da10b6261d86" msprop:DbColumnName="MovTransito" msprop:FriendlyName="MovTransito" type="xs:double" />
+                  <xs:element name="MovTrabajo" msprop:design-time-name="6edfa644-835a-4b8d-bef2-09c6372141b4" msprop:DbColumnName="MovTrabajo" msprop:FriendlyName="MovTrabajo" type="xs:double" />
+                  <xs:element name="MovResidencia" msprop:design-time-name="904808d8-d0a0-4e9c-a547-8645064a3f20" msprop:DbColumnName="MovResidencia" msprop:FriendlyName="MovResidencia" type="xs:double" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_departamentos" msprop:design-time-name="725920ba-4112-4601-bbbe-d40ef4818f59" msprop:DbTableName="departamentos" msprop:FriendlyName="departamentos" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="CodigoDepartamento" msprop:design-time-name="ad034e93-acc8-4a5a-b4fd-50a64835173d" msprop:DbColumnName="CodigoDepartamento" msprop:FriendlyName="CodigoDepartamento">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="5" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CodigoPais" msprop:design-time-name="7046c75e-f922-47ab-a794-a401eb7b17c9" msprop:DbColumnName="CodigoPais" msprop:FriendlyName="CodigoPais" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="NombreDepartamento" msprop:design-time-name="57597aab-b7bf-451f-92f2-f5487163386b" msprop:DbColumnName="NombreDepartamento" msprop:FriendlyName="NombreDepartamento">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_pais" msprop:design-time-name="6b2ab45a-4632-49c3-8a6d-de08f541e76e" msprop:DbTableName="pais" msprop:FriendlyName="pais" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="CodigoPais" msprop:design-time-name="4aa096dc-eaf5-4d2e-8845-de58b56739ce" msprop:DbColumnName="CodigoPais" msprop:FriendlyName="CodigoPais">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="NombrePais" msprop:design-time-name="c80fbaee-9183-44b9-8744-a58a495e23a8" msprop:DbColumnName="NombrePais" msprop:FriendlyName="NombrePais">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_tiempo" msprop:design-time-name="c9c3fe8d-9fd2-45d0-84c4-de6a3ac80d3c" msprop:DbTableName="tiempo" msprop:FriendlyName="tiempo" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="CodigoTiempo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="eb844d2d-6a3a-4304-bc2c-814a1dae70a7" msprop:DbColumnName="CodigoTiempo" msprop:FriendlyName="CodigoTiempo" type="xs:int" />
+                  <xs:element name="Fecha" msprop:design-time-name="b5709ddb-1c1c-49f1-9a8d-fe1c05d4d994" msprop:DbColumnName="Fecha" msprop:FriendlyName="Fecha" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="dia" msprop:design-time-name="5c7b0136-6fd7-4a62-bd65-87dc329b3b8d" msprop:DbColumnName="dia" msprop:FriendlyName="dia" type="xs:int" minOccurs="0" />
+                  <xs:element name="mes" msprop:design-time-name="ff0c74a6-28c9-4286-8e45-c03dbaf47960" msprop:DbColumnName="mes" msprop:FriendlyName="mes" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_departamentos" />
+          <xs:field xpath="CodigoDepartamento" />
+        </xs:unique>
+        <xs:unique name="dbo_pais_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_pais" />
+          <xs:field xpath="CodigoPais" />
+        </xs:unique>
+        <xs:unique name="dbo_tiempo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_tiempo" />
+          <xs:field xpath="CodigoTiempo" />
+        </xs:unique>
+        <xs:keyref name="fk_departamento_pais" refer="dbo_pais_Constraint1">
+          <xs:selector xpath=".//dbo_departamentos" />
+          <xs:field xpath="CodigoPais" />
+        </xs:keyref>
+        <xs:keyref name="fk_departamento" refer="Constraint1">
+          <xs:selector xpath=".//dbo_datos_desplazamiento" />
+          <xs:field xpath="CodigoDepartamento" />
+        </xs:keyref>
+        <xs:keyref name="fk_tiempo" refer="dbo_tiempo_Constraint1">
+          <xs:selector xpath=".//dbo_datos_desplazamiento" />
+          <xs:field xpath="CodigoTiempo" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <Desplazamiento_x0020_Comunidad xmlns="" />
+  </Schema>
+</DataSourceView>

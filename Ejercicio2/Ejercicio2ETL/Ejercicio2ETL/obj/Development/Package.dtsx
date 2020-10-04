@@ -1,0 +1,2726 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/1/2020 9:55:17 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-P1HT7PG6"
+  DTS:CreatorName="LAPTOP-P1HT7PG6\emman"
+  DTS:DTSID="{5C1FA0C3-C4F3-4478-B183-352C55C01013}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.121"
+  DTS:LocaleID="21514"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{50F4F32A-6389-4A7F-A4CD-B55D1AAEB7AE}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[127.0.0.1.desplazamiento_comunidad.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{94A5F160-4EA8-4F20-B163-2D884B056BDF}"
+      DTS:ObjectName="127.0.0.1.desplazamiento_comunidad.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=127.0.0.1;User ID=sa;Initial Catalog=desplazamiento_comunidad;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAApT+awJaLJ0ag1JWbDnbeFQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC//edSkLOyvAeukYBK01fhqjnlz11r7R/T65Q77kmDvAAAAAAOgAAAAAIAACAAAAA+tt+ELTq0jJ2XGlIN8OqX5eQHfV1YAQtzr3BEj/s6qhAAAABuYQtO5stn5T3ztZuYKa9CQAAAAAiFN8YorWgr1RHo+sbAPGPO28CC+MzmO7YUN3SQADPCzr2zGBjWuXDVEvkIiJp5qj/eU+YIeK9J6tgQR41euDI</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Administrador de conexiones con Excel 3]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{0DCE6996-9D9E-468B-BE7C-A0DD208F4E2C}"
+      DTS:ObjectName="Administrador de conexiones con Excel 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\emman\Desktop\Desafio2DW\Ejercicio2\2020_SV_Region_Mobility_Report.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\datos_desplazamiento"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C6775C27-6B54-4D4D-BE1E-E5D6A2109D93}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="datos_desplazamiento"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\datos_desplazamiento\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\datos_desplazamiento\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\datos_desplazamiento\Data Conversion.Inputs[Data Conversion Input].Columns[iso_3166_2_code]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="iso_3166_2_code"
+                      lineageId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[iso_3166_2_code]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\datos_desplazamiento\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\datos_desplazamiento\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\datos_desplazamiento\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de iso_3166_2_code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="5"
+                      lineageId="Package\datos_desplazamiento\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de iso_3166_2_code]"
+                      name="Copia de iso_3166_2_code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[iso_3166_2_code]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\datos_desplazamiento\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\datos_desplazamiento\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\datos_desplazamiento\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\datos_desplazamiento\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\datos_desplazamiento\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\datos_desplazamiento\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\datos_desplazamiento\ORIGEN SV COVID"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="ORIGEN SV COVID"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Worksheet$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\datos_desplazamiento\ORIGEN SV COVID.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel 3]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel 3]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[retail_and_recreation_percent_change_from_baseline]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[retail_and_recreation_percent_change_from_baseline]"
+                      lineageId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[retail_and_recreation_percent_change_from_baseline]"
+                      name="retail_and_recreation_percent_change_from_baseline"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[grocery_and_pharmacy_percent_change_from_baseline]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[grocery_and_pharmacy_percent_change_from_baseline]"
+                      lineageId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[grocery_and_pharmacy_percent_change_from_baseline]"
+                      name="grocery_and_pharmacy_percent_change_from_baseline"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[parks_percent_change_from_baseline]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[parks_percent_change_from_baseline]"
+                      lineageId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[parks_percent_change_from_baseline]"
+                      name="parks_percent_change_from_baseline"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[transit_stations_percent_change_from_baseline]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[transit_stations_percent_change_from_baseline]"
+                      lineageId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[transit_stations_percent_change_from_baseline]"
+                      name="transit_stations_percent_change_from_baseline"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[residential_percent_change_from_baseline]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[residential_percent_change_from_baseline]"
+                      lineageId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[residential_percent_change_from_baseline]"
+                      name="residential_percent_change_from_baseline"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[workplaces_percent_change_from_baseline]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[workplaces_percent_change_from_baseline]"
+                      lineageId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[workplaces_percent_change_from_baseline]"
+                      name="workplaces_percent_change_from_baseline"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[iso_3166_2_code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[iso_3166_2_code]"
+                      length="255"
+                      lineageId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[iso_3166_2_code]"
+                      name="iso_3166_2_code"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[country_region_code]"
+                      dataType="wstr"
+                      length="255"
+                      name="country_region_code" />
+                    <externalMetadataColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[country_region]"
+                      dataType="wstr"
+                      length="255"
+                      name="country_region" />
+                    <externalMetadataColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[sub_region_1]"
+                      dataType="wstr"
+                      length="255"
+                      name="sub_region_1" />
+                    <externalMetadataColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[sub_region_2]"
+                      dataType="wstr"
+                      length="255"
+                      name="sub_region_2" />
+                    <externalMetadataColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[metro_area]"
+                      dataType="wstr"
+                      length="255"
+                      name="metro_area" />
+                    <externalMetadataColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[iso_3166_2_code]"
+                      dataType="wstr"
+                      length="255"
+                      name="iso_3166_2_code" />
+                    <externalMetadataColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[census_fips_code]"
+                      dataType="wstr"
+                      length="255"
+                      name="census_fips_code" />
+                    <externalMetadataColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[date]"
+                      dataType="wstr"
+                      length="255"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[retail_and_recreation_percent_change_from_baseline]"
+                      dataType="r8"
+                      name="retail_and_recreation_percent_change_from_baseline" />
+                    <externalMetadataColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[grocery_and_pharmacy_percent_change_from_baseline]"
+                      dataType="r8"
+                      name="grocery_and_pharmacy_percent_change_from_baseline" />
+                    <externalMetadataColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[parks_percent_change_from_baseline]"
+                      dataType="r8"
+                      name="parks_percent_change_from_baseline" />
+                    <externalMetadataColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[transit_stations_percent_change_from_baseline]"
+                      dataType="r8"
+                      name="transit_stations_percent_change_from_baseline" />
+                    <externalMetadataColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[workplaces_percent_change_from_baseline]"
+                      dataType="r8"
+                      name="workplaces_percent_change_from_baseline" />
+                    <externalMetadataColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[residential_percent_change_from_baseline]"
+                      dataType="r8"
+                      name="residential_percent_change_from_baseline" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[retail_and_recreation_percent_change_from_baseline]"
+                      dataType="r8"
+                      lineageId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[retail_and_recreation_percent_change_from_baseline]"
+                      name="retail_and_recreation_percent_change_from_baseline" />
+                    <outputColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[grocery_and_pharmacy_percent_change_from_baseline]"
+                      dataType="r8"
+                      lineageId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[grocery_and_pharmacy_percent_change_from_baseline]"
+                      name="grocery_and_pharmacy_percent_change_from_baseline" />
+                    <outputColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[parks_percent_change_from_baseline]"
+                      dataType="r8"
+                      lineageId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[parks_percent_change_from_baseline]"
+                      name="parks_percent_change_from_baseline" />
+                    <outputColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[transit_stations_percent_change_from_baseline]"
+                      dataType="r8"
+                      lineageId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[transit_stations_percent_change_from_baseline]"
+                      name="transit_stations_percent_change_from_baseline" />
+                    <outputColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[residential_percent_change_from_baseline]"
+                      dataType="r8"
+                      lineageId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[residential_percent_change_from_baseline]"
+                      name="residential_percent_change_from_baseline" />
+                    <outputColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[workplaces_percent_change_from_baseline]"
+                      dataType="r8"
+                      lineageId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[workplaces_percent_change_from_baseline]"
+                      name="workplaces_percent_change_from_baseline" />
+                    <outputColumn
+                      refId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[iso_3166_2_code]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[iso_3166_2_code]"
+                      name="iso_3166_2_code" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\datos_desplazamiento\Tabla datos_desplazamiento"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Tabla datos_desplazamiento"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[datos_desplazamiento]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[127.0.0.1.desplazamiento_comunidad.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[127.0.0.1.desplazamiento_comunidad.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="IgnoreFailure"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input].Columns[retail_and_recreation_percent_change_from_baseline]"
+                      cachedDataType="r8"
+                      cachedName="retail_and_recreation_percent_change_from_baseline"
+                      externalMetadataColumnId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input].ExternalColumns[MovParque]"
+                      lineageId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[retail_and_recreation_percent_change_from_baseline]" />
+                    <inputColumn
+                      refId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input].Columns[grocery_and_pharmacy_percent_change_from_baseline]"
+                      cachedDataType="r8"
+                      cachedName="grocery_and_pharmacy_percent_change_from_baseline"
+                      externalMetadataColumnId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input].ExternalColumns[MovTSF]"
+                      lineageId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[grocery_and_pharmacy_percent_change_from_baseline]" />
+                    <inputColumn
+                      refId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input].Columns[parks_percent_change_from_baseline]"
+                      cachedDataType="r8"
+                      cachedName="parks_percent_change_from_baseline"
+                      externalMetadataColumnId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input].ExternalColumns[MovCR]"
+                      lineageId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[parks_percent_change_from_baseline]" />
+                    <inputColumn
+                      refId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input].Columns[transit_stations_percent_change_from_baseline]"
+                      cachedDataType="r8"
+                      cachedName="transit_stations_percent_change_from_baseline"
+                      externalMetadataColumnId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input].ExternalColumns[MovTransito]"
+                      lineageId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[transit_stations_percent_change_from_baseline]" />
+                    <inputColumn
+                      refId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input].Columns[workplaces_percent_change_from_baseline]"
+                      cachedDataType="r8"
+                      cachedName="workplaces_percent_change_from_baseline"
+                      externalMetadataColumnId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input].ExternalColumns[MovTrabajo]"
+                      lineageId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[workplaces_percent_change_from_baseline]" />
+                    <inputColumn
+                      refId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input].Columns[residential_percent_change_from_baseline]"
+                      cachedDataType="r8"
+                      cachedName="residential_percent_change_from_baseline"
+                      externalMetadataColumnId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input].ExternalColumns[MovResidencia]"
+                      lineageId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[residential_percent_change_from_baseline]" />
+                    <inputColumn
+                      refId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input].Columns[Copia de iso_3166_2_code]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="Copia de iso_3166_2_code"
+                      externalMetadataColumnId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input].ExternalColumns[CodigoDepartamento]"
+                      lineageId="Package\datos_desplazamiento\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de iso_3166_2_code]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input].ExternalColumns[CodigoTiempo]"
+                      dataType="i4"
+                      name="CodigoTiempo" />
+                    <externalMetadataColumn
+                      refId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input].ExternalColumns[MovParque]"
+                      dataType="r8"
+                      name="MovParque" />
+                    <externalMetadataColumn
+                      refId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input].ExternalColumns[MovTSF]"
+                      dataType="r8"
+                      name="MovTSF" />
+                    <externalMetadataColumn
+                      refId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input].ExternalColumns[MovCR]"
+                      dataType="r8"
+                      name="MovCR" />
+                    <externalMetadataColumn
+                      refId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input].ExternalColumns[MovTransito]"
+                      dataType="r8"
+                      name="MovTransito" />
+                    <externalMetadataColumn
+                      refId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input].ExternalColumns[MovTrabajo]"
+                      dataType="r8"
+                      name="MovTrabajo" />
+                    <externalMetadataColumn
+                      refId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input].ExternalColumns[MovResidencia]"
+                      dataType="r8"
+                      name="MovResidencia" />
+                    <externalMetadataColumn
+                      refId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input].ExternalColumns[CodigoDepartamento]"
+                      dataType="wstr"
+                      length="5"
+                      name="CodigoDepartamento" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\datos_desplazamiento.Paths[Data Conversion Output]"
+              endId="Package\datos_desplazamiento\Tabla datos_desplazamiento.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\datos_desplazamiento\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\datos_desplazamiento.Paths[Excel Source Output]"
+              endId="Package\datos_desplazamiento\Data Conversion.Inputs[Data Conversion Input]"
+              name="Excel Source Output"
+              startId="Package\datos_desplazamiento\ORIGEN SV COVID.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Departamentos"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1DCEA496-7C2C-4592-BFDD-F64F2B8A1193}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Departamentos"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Departamentos\Agrupacion de datos"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="Agrupacion de datos"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Departamentos\Agrupacion de datos.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Departamentos\Agrupacion de datos.Inputs[Aggregate Input 1].Columns[Copia de sub_region_1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copia de sub_region_1"
+                      lineageId="Package\Departamentos\conversion.Outputs[Data Conversion Output].Columns[Copia de sub_region_1]" />
+                    <inputColumn
+                      refId="Package\Departamentos\Agrupacion de datos.Inputs[Aggregate Input 1].Columns[Copia de country_region_code]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="Copia de country_region_code"
+                      lineageId="Package\Departamentos\conversion.Outputs[Data Conversion Output].Columns[Copia de country_region_code]" />
+                    <inputColumn
+                      refId="Package\Departamentos\Agrupacion de datos.Inputs[Aggregate Input 1].Columns[Copia de iso_3166_2_code]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="Copia de iso_3166_2_code"
+                      lineageId="Package\Departamentos\conversion.Outputs[Data Conversion Output].Columns[Copia de iso_3166_2_code]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Departamentos\Agrupacion de datos.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Departamentos\Agrupacion de datos.Outputs[Aggregate Output 1].Columns[Copia de sub_region_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Departamentos\Agrupacion de datos.Outputs[Aggregate Output 1].Columns[Copia de sub_region_1]"
+                      name="Copia de sub_region_1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Departamentos\conversion.Outputs[Data Conversion Output].Columns[Copia de sub_region_1]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Departamentos\Agrupacion de datos.Outputs[Aggregate Output 1].Columns[Copia de country_region_code]"
+                      dataType="wstr"
+                      length="2"
+                      lineageId="Package\Departamentos\Agrupacion de datos.Outputs[Aggregate Output 1].Columns[Copia de country_region_code]"
+                      name="Copia de country_region_code">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Departamentos\conversion.Outputs[Data Conversion Output].Columns[Copia de country_region_code]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Departamentos\Agrupacion de datos.Outputs[Aggregate Output 1].Columns[Copia de iso_3166_2_code]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Departamentos\Agrupacion de datos.Outputs[Aggregate Output 1].Columns[Copia de iso_3166_2_code]"
+                      name="Copia de iso_3166_2_code">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Departamentos\conversion.Outputs[Data Conversion Output].Columns[Copia de iso_3166_2_code]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Departamentos\conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Departamentos\conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Departamentos\conversion.Inputs[Data Conversion Input].Columns[sub_region_1]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="sub_region_1"
+                      lineageId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[sub_region_1]" />
+                    <inputColumn
+                      refId="Package\Departamentos\conversion.Inputs[Data Conversion Input].Columns[country_region_code]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="country_region_code"
+                      lineageId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[country_region_code]" />
+                    <inputColumn
+                      refId="Package\Departamentos\conversion.Inputs[Data Conversion Input].Columns[iso_3166_2_code]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="iso_3166_2_code"
+                      lineageId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[iso_3166_2_code]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Departamentos\conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Departamentos\conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Departamentos\conversion.Outputs[Data Conversion Output].Columns[Copia de sub_region_1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Departamentos\conversion.Outputs[Data Conversion Output].Columns[Copia de sub_region_1]"
+                      name="Copia de sub_region_1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[sub_region_1]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Departamentos\conversion.Outputs[Data Conversion Output].Columns[Copia de country_region_code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="2"
+                      lineageId="Package\Departamentos\conversion.Outputs[Data Conversion Output].Columns[Copia de country_region_code]"
+                      name="Copia de country_region_code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[country_region_code]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Departamentos\conversion.Outputs[Data Conversion Output].Columns[Copia de iso_3166_2_code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="5"
+                      lineageId="Package\Departamentos\conversion.Outputs[Data Conversion Output].Columns[Copia de iso_3166_2_code]"
+                      name="Copia de iso_3166_2_code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[iso_3166_2_code]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Departamentos\conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Departamentos\conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Departamentos\conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Departamentos\conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Departamentos\conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Departamentos\conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Departamentos\ORIGEN SV COVID"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="ORIGEN SV COVID"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Worksheet$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Departamentos\ORIGEN SV COVID.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel 3]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel 3]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[sub_region_1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[sub_region_1]"
+                      length="255"
+                      lineageId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[sub_region_1]"
+                      name="sub_region_1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[country_region_code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[country_region_code]"
+                      length="255"
+                      lineageId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[country_region_code]"
+                      name="country_region_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[iso_3166_2_code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[iso_3166_2_code]"
+                      length="255"
+                      lineageId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[iso_3166_2_code]"
+                      name="iso_3166_2_code"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[country_region_code]"
+                      dataType="wstr"
+                      length="255"
+                      name="country_region_code" />
+                    <externalMetadataColumn
+                      refId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[country_region]"
+                      dataType="wstr"
+                      length="255"
+                      name="country_region" />
+                    <externalMetadataColumn
+                      refId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[sub_region_1]"
+                      dataType="wstr"
+                      length="255"
+                      name="sub_region_1" />
+                    <externalMetadataColumn
+                      refId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[sub_region_2]"
+                      dataType="wstr"
+                      length="255"
+                      name="sub_region_2" />
+                    <externalMetadataColumn
+                      refId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[metro_area]"
+                      dataType="wstr"
+                      length="255"
+                      name="metro_area" />
+                    <externalMetadataColumn
+                      refId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[iso_3166_2_code]"
+                      dataType="wstr"
+                      length="255"
+                      name="iso_3166_2_code" />
+                    <externalMetadataColumn
+                      refId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[census_fips_code]"
+                      dataType="wstr"
+                      length="255"
+                      name="census_fips_code" />
+                    <externalMetadataColumn
+                      refId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[date]"
+                      dataType="wstr"
+                      length="255"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[retail_and_recreation_percent_change_from_baseline]"
+                      dataType="r8"
+                      name="retail_and_recreation_percent_change_from_baseline" />
+                    <externalMetadataColumn
+                      refId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[grocery_and_pharmacy_percent_change_from_baseline]"
+                      dataType="r8"
+                      name="grocery_and_pharmacy_percent_change_from_baseline" />
+                    <externalMetadataColumn
+                      refId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[parks_percent_change_from_baseline]"
+                      dataType="r8"
+                      name="parks_percent_change_from_baseline" />
+                    <externalMetadataColumn
+                      refId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[transit_stations_percent_change_from_baseline]"
+                      dataType="r8"
+                      name="transit_stations_percent_change_from_baseline" />
+                    <externalMetadataColumn
+                      refId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[workplaces_percent_change_from_baseline]"
+                      dataType="r8"
+                      name="workplaces_percent_change_from_baseline" />
+                    <externalMetadataColumn
+                      refId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[residential_percent_change_from_baseline]"
+                      dataType="r8"
+                      name="residential_percent_change_from_baseline" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[sub_region_1]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[sub_region_1]"
+                      name="sub_region_1" />
+                    <outputColumn
+                      refId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[country_region_code]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[country_region_code]"
+                      name="country_region_code" />
+                    <outputColumn
+                      refId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[iso_3166_2_code]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[iso_3166_2_code]"
+                      name="iso_3166_2_code" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Departamentos\Tabla departamentos"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Tabla departamentos"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[departamentos]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Departamentos\Tabla departamentos.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[127.0.0.1.desplazamiento_comunidad.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[127.0.0.1.desplazamiento_comunidad.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Departamentos\Tabla departamentos.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="IgnoreFailure"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Departamentos\Tabla departamentos.Inputs[OLE DB Destination Input].Columns[Copia de country_region_code]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="Copia de country_region_code"
+                      externalMetadataColumnId="Package\Departamentos\Tabla departamentos.Inputs[OLE DB Destination Input].ExternalColumns[CodigoPais]"
+                      lineageId="Package\Departamentos\Agrupacion de datos.Outputs[Aggregate Output 1].Columns[Copia de country_region_code]" />
+                    <inputColumn
+                      refId="Package\Departamentos\Tabla departamentos.Inputs[OLE DB Destination Input].Columns[Copia de sub_region_1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copia de sub_region_1"
+                      externalMetadataColumnId="Package\Departamentos\Tabla departamentos.Inputs[OLE DB Destination Input].ExternalColumns[NombreDepartamento]"
+                      lineageId="Package\Departamentos\Agrupacion de datos.Outputs[Aggregate Output 1].Columns[Copia de sub_region_1]" />
+                    <inputColumn
+                      refId="Package\Departamentos\Tabla departamentos.Inputs[OLE DB Destination Input].Columns[Copia de iso_3166_2_code]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="Copia de iso_3166_2_code"
+                      externalMetadataColumnId="Package\Departamentos\Tabla departamentos.Inputs[OLE DB Destination Input].ExternalColumns[CodigoDepartamento]"
+                      lineageId="Package\Departamentos\Agrupacion de datos.Outputs[Aggregate Output 1].Columns[Copia de iso_3166_2_code]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Departamentos\Tabla departamentos.Inputs[OLE DB Destination Input].ExternalColumns[CodigoDepartamento]"
+                      dataType="wstr"
+                      length="5"
+                      name="CodigoDepartamento" />
+                    <externalMetadataColumn
+                      refId="Package\Departamentos\Tabla departamentos.Inputs[OLE DB Destination Input].ExternalColumns[CodigoPais]"
+                      dataType="wstr"
+                      length="2"
+                      name="CodigoPais" />
+                    <externalMetadataColumn
+                      refId="Package\Departamentos\Tabla departamentos.Inputs[OLE DB Destination Input].ExternalColumns[NombreDepartamento]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NombreDepartamento" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Departamentos\Tabla departamentos.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Departamentos\Tabla departamentos.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Departamentos\Tabla departamentos.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Departamentos\Tabla departamentos.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Departamentos\Tabla departamentos.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Departamentos\Tabla departamentos.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Departamentos.Paths[Aggregate Output 1]"
+              endId="Package\Departamentos\Tabla departamentos.Inputs[OLE DB Destination Input]"
+              name="Aggregate Output 1"
+              startId="Package\Departamentos\Agrupacion de datos.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\Departamentos.Paths[Data Conversion Output]"
+              endId="Package\Departamentos\Agrupacion de datos.Inputs[Aggregate Input 1]"
+              name="Data Conversion Output"
+              startId="Package\Departamentos\conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Departamentos.Paths[Excel Source Output]"
+              endId="Package\Departamentos\conversion.Inputs[Data Conversion Input]"
+              name="Excel Source Output"
+              startId="Package\Departamentos\ORIGEN SV COVID.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\País"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{EC65460D-9045-4D61-9F56-CAA4520C6F22}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="País"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\País\Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\País\Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\País\Conversion.Inputs[Data Conversion Input].Columns[country_region_code]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="country_region_code"
+                      lineageId="Package\País\Origen SV COVID.Outputs[Excel Source Output].Columns[country_region_code]" />
+                    <inputColumn
+                      refId="Package\País\Conversion.Inputs[Data Conversion Input].Columns[country_region]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="country_region"
+                      lineageId="Package\País\Origen SV COVID.Outputs[Excel Source Output].Columns[country_region]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\País\Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\País\Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\País\Conversion.Outputs[Data Conversion Output].Columns[Copia de country_region_code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="2"
+                      lineageId="Package\País\Conversion.Outputs[Data Conversion Output].Columns[Copia de country_region_code]"
+                      name="Copia de country_region_code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\País\Origen SV COVID.Outputs[Excel Source Output].Columns[country_region_code]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\País\Conversion.Outputs[Data Conversion Output].Columns[Copia de country_region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\País\Conversion.Outputs[Data Conversion Output].Columns[Copia de country_region]"
+                      name="Copia de country_region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\País\Origen SV COVID.Outputs[Excel Source Output].Columns[country_region]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\País\Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\País\Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\País\Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\País\Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\País\Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\País\Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\País\Origen SV COVID"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Origen SV COVID"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Worksheet$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\País\Origen SV COVID.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel 3]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel 3]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\País\Origen SV COVID.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\País\Origen SV COVID.Outputs[Excel Source Output].Columns[country_region_code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\País\Origen SV COVID.Outputs[Excel Source Output].ExternalColumns[country_region_code]"
+                      length="255"
+                      lineageId="Package\País\Origen SV COVID.Outputs[Excel Source Output].Columns[country_region_code]"
+                      name="country_region_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\País\Origen SV COVID.Outputs[Excel Source Output].Columns[country_region]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\País\Origen SV COVID.Outputs[Excel Source Output].ExternalColumns[country_region]"
+                      length="255"
+                      lineageId="Package\País\Origen SV COVID.Outputs[Excel Source Output].Columns[country_region]"
+                      name="country_region"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\País\Origen SV COVID.Outputs[Excel Source Output].ExternalColumns[country_region_code]"
+                      dataType="wstr"
+                      length="255"
+                      name="country_region_code" />
+                    <externalMetadataColumn
+                      refId="Package\País\Origen SV COVID.Outputs[Excel Source Output].ExternalColumns[country_region]"
+                      dataType="wstr"
+                      length="255"
+                      name="country_region" />
+                    <externalMetadataColumn
+                      refId="Package\País\Origen SV COVID.Outputs[Excel Source Output].ExternalColumns[sub_region_1]"
+                      dataType="wstr"
+                      length="255"
+                      name="sub_region_1" />
+                    <externalMetadataColumn
+                      refId="Package\País\Origen SV COVID.Outputs[Excel Source Output].ExternalColumns[sub_region_2]"
+                      dataType="wstr"
+                      length="255"
+                      name="sub_region_2" />
+                    <externalMetadataColumn
+                      refId="Package\País\Origen SV COVID.Outputs[Excel Source Output].ExternalColumns[metro_area]"
+                      dataType="wstr"
+                      length="255"
+                      name="metro_area" />
+                    <externalMetadataColumn
+                      refId="Package\País\Origen SV COVID.Outputs[Excel Source Output].ExternalColumns[iso_3166_2_code]"
+                      dataType="wstr"
+                      length="255"
+                      name="iso_3166_2_code" />
+                    <externalMetadataColumn
+                      refId="Package\País\Origen SV COVID.Outputs[Excel Source Output].ExternalColumns[census_fips_code]"
+                      dataType="wstr"
+                      length="255"
+                      name="census_fips_code" />
+                    <externalMetadataColumn
+                      refId="Package\País\Origen SV COVID.Outputs[Excel Source Output].ExternalColumns[date]"
+                      dataType="wstr"
+                      length="255"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\País\Origen SV COVID.Outputs[Excel Source Output].ExternalColumns[retail_and_recreation_percent_change_from_baseline]"
+                      dataType="r8"
+                      name="retail_and_recreation_percent_change_from_baseline" />
+                    <externalMetadataColumn
+                      refId="Package\País\Origen SV COVID.Outputs[Excel Source Output].ExternalColumns[grocery_and_pharmacy_percent_change_from_baseline]"
+                      dataType="r8"
+                      name="grocery_and_pharmacy_percent_change_from_baseline" />
+                    <externalMetadataColumn
+                      refId="Package\País\Origen SV COVID.Outputs[Excel Source Output].ExternalColumns[parks_percent_change_from_baseline]"
+                      dataType="r8"
+                      name="parks_percent_change_from_baseline" />
+                    <externalMetadataColumn
+                      refId="Package\País\Origen SV COVID.Outputs[Excel Source Output].ExternalColumns[transit_stations_percent_change_from_baseline]"
+                      dataType="r8"
+                      name="transit_stations_percent_change_from_baseline" />
+                    <externalMetadataColumn
+                      refId="Package\País\Origen SV COVID.Outputs[Excel Source Output].ExternalColumns[workplaces_percent_change_from_baseline]"
+                      dataType="r8"
+                      name="workplaces_percent_change_from_baseline" />
+                    <externalMetadataColumn
+                      refId="Package\País\Origen SV COVID.Outputs[Excel Source Output].ExternalColumns[residential_percent_change_from_baseline]"
+                      dataType="r8"
+                      name="residential_percent_change_from_baseline" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\País\Origen SV COVID.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\País\Origen SV COVID.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\País\Origen SV COVID.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\País\Origen SV COVID.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\País\Origen SV COVID.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\País\Origen SV COVID.Outputs[Excel Source Error Output].Columns[country_region_code]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\País\Origen SV COVID.Outputs[Excel Source Error Output].Columns[country_region_code]"
+                      name="country_region_code" />
+                    <outputColumn
+                      refId="Package\País\Origen SV COVID.Outputs[Excel Source Error Output].Columns[country_region]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\País\Origen SV COVID.Outputs[Excel Source Error Output].Columns[country_region]"
+                      name="country_region" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\País\Tabla pais"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Tabla pais"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[pais]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\País\Tabla pais.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[127.0.0.1.desplazamiento_comunidad.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[127.0.0.1.desplazamiento_comunidad.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\País\Tabla pais.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="IgnoreFailure"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\País\Tabla pais.Inputs[OLE DB Destination Input].Columns[Copia de country_region_code]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="Copia de country_region_code"
+                      externalMetadataColumnId="Package\País\Tabla pais.Inputs[OLE DB Destination Input].ExternalColumns[CodigoPais]"
+                      lineageId="Package\País\Conversion.Outputs[Data Conversion Output].Columns[Copia de country_region_code]" />
+                    <inputColumn
+                      refId="Package\País\Tabla pais.Inputs[OLE DB Destination Input].Columns[Copia de country_region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copia de country_region"
+                      externalMetadataColumnId="Package\País\Tabla pais.Inputs[OLE DB Destination Input].ExternalColumns[NombrePais]"
+                      lineageId="Package\País\Conversion.Outputs[Data Conversion Output].Columns[Copia de country_region]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\País\Tabla pais.Inputs[OLE DB Destination Input].ExternalColumns[CodigoPais]"
+                      dataType="wstr"
+                      length="2"
+                      name="CodigoPais" />
+                    <externalMetadataColumn
+                      refId="Package\País\Tabla pais.Inputs[OLE DB Destination Input].ExternalColumns[NombrePais]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NombrePais" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\País\Tabla pais.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\País\Tabla pais.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\País\Tabla pais.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\País\Tabla pais.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\País\Tabla pais.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\País\Tabla pais.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\País.Paths[Data Conversion Output]"
+              endId="Package\País\Tabla pais.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\País\Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\País.Paths[Excel Source Output]"
+              endId="Package\País\Conversion.Inputs[Data Conversion Input]"
+              name="Excel Source Output"
+              startId="Package\País\Origen SV COVID.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tiempo"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{D609304C-FBDB-484D-BEDE-B48A2566E6C9}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tiempo"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tiempo\Calculo de campos de tiempo"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Calculo de campos de tiempo"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Tiempo\Calculo de campos de tiempo.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tiempo\Calculo de campos de tiempo.Inputs[Derived Column Input].Columns[Copia de date]"
+                      cachedDataType="date"
+                      cachedName="Copia de date"
+                      lineageId="Package\Tiempo\conversiones.Outputs[Data Conversion Output].Columns[Copia de date]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tiempo\Calculo de campos de tiempo.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Tiempo\Calculo de campos de tiempo.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tiempo\Calculo de campos de tiempo.Outputs[Derived Column Output].Columns[Dia]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tiempo\Calculo de campos de tiempo.Outputs[Derived Column Output].Columns[Dia]"
+                      name="Dia"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[DAY](#{Package\Tiempo\conversiones.Outputs[Data Conversion Output].Columns[Copia de date]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DAY([Copia de date])</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tiempo\Calculo de campos de tiempo.Outputs[Derived Column Output].Columns[Mes]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tiempo\Calculo de campos de tiempo.Outputs[Derived Column Output].Columns[Mes]"
+                      name="Mes"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[MONTH](#{Package\Tiempo\conversiones.Outputs[Data Conversion Output].Columns[Copia de date]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">MONTH([Copia de date])</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tiempo\Calculo de campos de tiempo.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Tiempo\Calculo de campos de tiempo.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tiempo\Calculo de campos de tiempo.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tiempo\Calculo de campos de tiempo.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tiempo\Calculo de campos de tiempo.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tiempo\Calculo de campos de tiempo.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tiempo\conversiones"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="conversiones"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Tiempo\conversiones.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tiempo\conversiones.Inputs[Data Conversion Input].Columns[date]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="date"
+                      lineageId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[date]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tiempo\conversiones.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Tiempo\conversiones.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tiempo\conversiones.Outputs[Data Conversion Output].Columns[Copia de date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tiempo\conversiones.Outputs[Data Conversion Output].Columns[Copia de date]"
+                      name="Copia de date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tiempo\conversiones.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Tiempo\conversiones.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tiempo\conversiones.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tiempo\conversiones.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tiempo\conversiones.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tiempo\conversiones.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tiempo\ORIGEN SV COVID"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="ORIGEN SV COVID"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Worksheet$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tiempo\ORIGEN SV COVID.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel 3]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel 3]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[date]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[date]"
+                      length="255"
+                      lineageId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Output].Columns[date]"
+                      name="date"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[country_region_code]"
+                      dataType="wstr"
+                      length="255"
+                      name="country_region_code" />
+                    <externalMetadataColumn
+                      refId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[country_region]"
+                      dataType="wstr"
+                      length="255"
+                      name="country_region" />
+                    <externalMetadataColumn
+                      refId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[sub_region_1]"
+                      dataType="wstr"
+                      length="255"
+                      name="sub_region_1" />
+                    <externalMetadataColumn
+                      refId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[sub_region_2]"
+                      dataType="wstr"
+                      length="255"
+                      name="sub_region_2" />
+                    <externalMetadataColumn
+                      refId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[metro_area]"
+                      dataType="wstr"
+                      length="255"
+                      name="metro_area" />
+                    <externalMetadataColumn
+                      refId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[iso_3166_2_code]"
+                      dataType="wstr"
+                      length="255"
+                      name="iso_3166_2_code" />
+                    <externalMetadataColumn
+                      refId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[census_fips_code]"
+                      dataType="wstr"
+                      length="255"
+                      name="census_fips_code" />
+                    <externalMetadataColumn
+                      refId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[date]"
+                      dataType="wstr"
+                      length="255"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[retail_and_recreation_percent_change_from_baseline]"
+                      dataType="r8"
+                      name="retail_and_recreation_percent_change_from_baseline" />
+                    <externalMetadataColumn
+                      refId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[grocery_and_pharmacy_percent_change_from_baseline]"
+                      dataType="r8"
+                      name="grocery_and_pharmacy_percent_change_from_baseline" />
+                    <externalMetadataColumn
+                      refId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[parks_percent_change_from_baseline]"
+                      dataType="r8"
+                      name="parks_percent_change_from_baseline" />
+                    <externalMetadataColumn
+                      refId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[transit_stations_percent_change_from_baseline]"
+                      dataType="r8"
+                      name="transit_stations_percent_change_from_baseline" />
+                    <externalMetadataColumn
+                      refId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[workplaces_percent_change_from_baseline]"
+                      dataType="r8"
+                      name="workplaces_percent_change_from_baseline" />
+                    <externalMetadataColumn
+                      refId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Output].ExternalColumns[residential_percent_change_from_baseline]"
+                      dataType="r8"
+                      name="residential_percent_change_from_baseline" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[date]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Error Output].Columns[date]"
+                      name="date" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tiempo\Tabla tiempo"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Tabla tiempo"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[tiempo]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tiempo\Tabla tiempo.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[127.0.0.1.desplazamiento_comunidad.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[127.0.0.1.desplazamiento_comunidad.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tiempo\Tabla tiempo.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="IgnoreFailure"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tiempo\Tabla tiempo.Inputs[OLE DB Destination Input].Columns[Dia]"
+                      cachedDataType="i4"
+                      cachedName="Dia"
+                      externalMetadataColumnId="Package\Tiempo\Tabla tiempo.Inputs[OLE DB Destination Input].ExternalColumns[dia]"
+                      lineageId="Package\Tiempo\Calculo de campos de tiempo.Outputs[Derived Column Output].Columns[Dia]" />
+                    <inputColumn
+                      refId="Package\Tiempo\Tabla tiempo.Inputs[OLE DB Destination Input].Columns[Mes]"
+                      cachedDataType="i4"
+                      cachedName="Mes"
+                      externalMetadataColumnId="Package\Tiempo\Tabla tiempo.Inputs[OLE DB Destination Input].ExternalColumns[mes]"
+                      lineageId="Package\Tiempo\Calculo de campos de tiempo.Outputs[Derived Column Output].Columns[Mes]" />
+                    <inputColumn
+                      refId="Package\Tiempo\Tabla tiempo.Inputs[OLE DB Destination Input].Columns[Copia de date]"
+                      cachedDataType="date"
+                      cachedName="Copia de date"
+                      externalMetadataColumnId="Package\Tiempo\Tabla tiempo.Inputs[OLE DB Destination Input].ExternalColumns[Fecha]"
+                      lineageId="Package\Tiempo\conversiones.Outputs[Data Conversion Output].Columns[Copia de date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tiempo\Tabla tiempo.Inputs[OLE DB Destination Input].ExternalColumns[CodigoTiempo]"
+                      dataType="i4"
+                      name="CodigoTiempo" />
+                    <externalMetadataColumn
+                      refId="Package\Tiempo\Tabla tiempo.Inputs[OLE DB Destination Input].ExternalColumns[Fecha]"
+                      dataType="dbDate"
+                      name="Fecha" />
+                    <externalMetadataColumn
+                      refId="Package\Tiempo\Tabla tiempo.Inputs[OLE DB Destination Input].ExternalColumns[dia]"
+                      dataType="i4"
+                      name="dia" />
+                    <externalMetadataColumn
+                      refId="Package\Tiempo\Tabla tiempo.Inputs[OLE DB Destination Input].ExternalColumns[mes]"
+                      dataType="i4"
+                      name="mes" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tiempo\Tabla tiempo.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Tiempo\Tabla tiempo.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tiempo\Tabla tiempo.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tiempo\Tabla tiempo.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tiempo\Tabla tiempo.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tiempo\Tabla tiempo.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tiempo.Paths[Data Conversion Output]"
+              endId="Package\Tiempo\Calculo de campos de tiempo.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\Tiempo\conversiones.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Tiempo.Paths[Derived Column Output]"
+              endId="Package\Tiempo\Tabla tiempo.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Tiempo\Calculo de campos de tiempo.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Tiempo.Paths[Excel Source Output]"
+              endId="Package\Tiempo\conversiones.Inputs[Data Conversion Input]"
+              name="Excel Source Output"
+              startId="Package\Tiempo\ORIGEN SV COVID.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{D4FF0645-88D2-4B30-A129-3B455A823EF7}"
+      DTS:From="Package\País"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Departamentos" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{0BE7613A-2128-45AC-9C90-AA60738DD22D}"
+      DTS:From="Package\Departamentos"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\Tiempo" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{9AFB32B4-65EB-4CE1-A32B-88249348C9CF}"
+      DTS:From="Package\Tiempo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\datos_desplazamiento" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="183,42"
+          Id="Package\datos_desplazamiento"
+          TopLeft="282,276" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Departamentos"
+          TopLeft="293,117" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\País"
+          TopLeft="315,34" />
+        <NodeLayout
+          Size="114,42"
+          Id="Package\Tiempo"
+          TopLeft="311,198" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="366.25,76">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="368.25,159">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="370.75,240">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\datos_desplazamiento">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="212,42"
+          Id="Package\datos_desplazamiento\Tabla datos_desplazamiento"
+          TopLeft="301,236" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\datos_desplazamiento\ORIGEN SV COVID"
+          TopLeft="323,44" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\datos_desplazamiento\Data Conversion"
+          TopLeft="325,139" />
+        <EdgeLayout
+          Id="Package\datos_desplazamiento.Paths[Excel Source Output]"
+          TopLeft="405,86">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\datos_desplazamiento.Paths[Data Conversion Output]"
+          TopLeft="405,181">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\datos_desplazamiento\Tabla datos_desplazamiento">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\datos_desplazamiento\ORIGEN SV COVID">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Departamentos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Departamentos\Tabla departamentos"
+          TopLeft="265,289" />
+        <NodeLayout
+          Size="129,42"
+          Id="Package\Departamentos\conversion"
+          TopLeft="284,127" />
+        <NodeLayout
+          Size="175,44"
+          Id="Package\Departamentos\Agrupacion de datos"
+          TopLeft="265,200" />
+        <NodeLayout
+          Size="168,44"
+          Id="Package\Departamentos\ORIGEN SV COVID"
+          TopLeft="265,44" />
+        <EdgeLayout
+          Id="Package\Departamentos.Paths[Excel Source Output]"
+          TopLeft="348.75,88">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Departamentos.Paths[Data Conversion Output]"
+          TopLeft="350.5,169">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Departamentos.Paths[Aggregate Output 1]"
+          TopLeft="353.5,244">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Departamentos\Tabla departamentos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Departamentos\ORIGEN SV COVID">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\País">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="127,42"
+          Id="Package\País\Tabla pais"
+          TopLeft="339,196" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\País\Origen SV COVID"
+          TopLeft="326,21" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\País\Conversion"
+          TopLeft="344,107" />
+        <EdgeLayout
+          Id="Package\País.Paths[Excel Source Output]"
+          TopLeft="408,63">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\País.Paths[Data Conversion Output]"
+          TopLeft="406,149">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\País\Tabla pais">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\País\Origen SV COVID">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Tiempo">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Tiempo\Tabla tiempo"
+          TopLeft="343,290" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Tiempo\ORIGEN SV COVID"
+          TopLeft="323,39" />
+        <NodeLayout
+          Size="217,42"
+          Id="Package\Tiempo\Calculo de campos de tiempo"
+          TopLeft="300,198" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Tiempo\conversiones"
+          TopLeft="338,122" />
+        <EdgeLayout
+          Id="Package\Tiempo.Paths[Excel Source Output]"
+          TopLeft="407.5,81">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tiempo.Paths[Derived Column Output]"
+          TopLeft="410.75,240">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tiempo.Paths[Data Conversion Output]"
+          TopLeft="408.25,164">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tiempo\Tabla tiempo">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tiempo\ORIGEN SV COVID">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
